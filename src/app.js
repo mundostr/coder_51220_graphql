@@ -45,7 +45,7 @@ const app = express();
 app.use("/gql/users", graphqlHTTP({ schema: schema, graphiql: true }));
 app.all("*", (req, res) => res.status(200).send('Este servidor opera con Graphql, único endpoint habilitado: /gql/users'));
 
-app.listen(process.env.APP_PORT, () => {
-    mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log(`Server running on port ${process.env.APP_PORT}`);
+app.listen(process.env.APP_PORT, async () => {
+    await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log(`Server ok on port ${process.env.APP_PORT}`);
 });
