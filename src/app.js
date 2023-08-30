@@ -5,7 +5,6 @@ import { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList } from "gr
 
 import userModel from "./models/user.dbmodel.js";
 
-
 const UserType = new GraphQLObjectType({
     name: "User",
     
